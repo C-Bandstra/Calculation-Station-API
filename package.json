@@ -1,0 +1,14 @@
+{
+  "name": "calculation-station",
+  "version": "1.0.0",
+  "description": "Calculation Station API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "C-Bandstra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
