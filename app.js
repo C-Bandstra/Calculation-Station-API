@@ -19,6 +19,7 @@ app.get("/", (req, res, next) => {
 
  app.post("/addCalculation", (req, res, next) => {
    const { sequence } = req.body
+   console.log(sequence)
   calculations.push(sequence)
   res.json({ ok: true, calculations})
  })
