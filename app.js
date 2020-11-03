@@ -22,8 +22,8 @@ app.get("/", (req, res, next) => {
  });
 
  app.post("/addCalculation", (req, res, next) => {
-   console.log(req.body)
   const { sequence } = req.body
+  sequence = JSON.parse(sequence)
   calculations.push(sequence)
   res.json({ ok: true, calculations})
  })
