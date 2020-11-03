@@ -17,6 +17,12 @@ app.get("/", (req, res, next) => {
   res.json(calculations);
  });
 
+ app.post("/addCalculation", (req, res, next) => {
+   const { sequence } = req.body
+  calculations.push(sequence)
+  res.json({ ok: true, calculations})
+ })
+
 app.listen(PORT, () => {
  console.log(`Server running on port ${PORT}`);
 });
