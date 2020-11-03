@@ -2,10 +2,14 @@ var express = require('express');
 const bodyParser = require('body-parser');
 
 var app = express();
+var cors = require('cors')
 var PORT = process.env.PORT || 5000;
 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.options('*', cors())
 
 const calculations = ['2x2=4', '40/4=10', '8+9=17', '10-1=9']
 
