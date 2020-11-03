@@ -9,7 +9,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.options('*', cors())
+// app.options('*', cors())
 
 const calculations = ['2x2=4', '40/4=10', '8+9=17', '10-1=9']
 
@@ -22,7 +22,7 @@ app.get("/", (req, res, next) => {
  });
 
  app.post("/addCalculation", (req, res, next) => {
-  const { sequence } = req.body
+  const sequence = req.body
   calculations.push(sequence)
   res.json({ ok: true, calculations})
  })
