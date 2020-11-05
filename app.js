@@ -1,7 +1,6 @@
 var express = require('express');
 const bodyParser = require('body-parser');
 
-
 var app = express();
 var cors = require('cors')
 var PORT = process.env.PORT || 5000;
@@ -19,6 +18,10 @@ app.get("/", (req, res, next) => {
  app.get("/calculations", (req, res, next) => {
   res.json(calculations);
  });
+
+ app.get("/clear", (req, res, next) => {
+   calculations = []
+ })
 
  app.post("/addCalculation", (req, res, next) => {
   const { sequence } = req.body
