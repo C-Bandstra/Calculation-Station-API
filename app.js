@@ -21,6 +21,7 @@ app.get("/", (req, res, next) => {
 
  app.get("/clear", (req, res, next) => {
    calculations = []
+   res.json(calculations);
  })
 
  app.post("/addCalculation", (req, res, next) => {
