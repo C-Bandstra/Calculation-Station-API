@@ -21,7 +21,7 @@ app.get("/", (req, res, next) => {
 
  app.post("/addCalculation", (req, res, next) => {
   const { sequence } = req.body
-  calculations.length === 10 ? calculations.pop() : null
+  calculations.length === 10 ? calculations.shift() : null
   calculations.push(sequence)
   res.json({ ok: true, calculations})
  })
