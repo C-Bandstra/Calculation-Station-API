@@ -11,15 +11,11 @@ app.use(bodyParser.json());
 
 const calculations = []
 
-app.get("/", (req, res, next) => {
-  res.json(["5x2=10", "5+14=19"]);
- });
-
- app.get("/calculations", (req, res, next) => {
+ app.get("/calculations", (req, res) => {
   res.json(calculations);
  });
 
- app.post("/addCalculation", (req, res, next) => {
+ app.post("/addCalculation", (req, res) => {
   const { sequence } = req.body
   calculations.length === 10 ? calculations.pop() : null
   calculations.unshift(sequence)
